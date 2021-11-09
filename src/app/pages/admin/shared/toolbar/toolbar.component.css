@@ -1,0 +1,49 @@
+mat-toolbar {
+    background: white;
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
+
+.example-spacer {
+    flex:1 1 auto;
+  }
+.logout{
+    border-style: solid;
+    border-color:rgb(9,31,74) ;
+    border-radius: 6%;
+}
+.logout:hover{
+    color: white;
+    background-color: rgb(7, 58, 160) ;
+}
+.user{
+    color: rgb(0, 0, 0);
+    margin-left: 10%;
+}
+.menu-button{
+    margin-right: 3%;
+}
+.boton-sidebar{
+    padding-right: 50%;
+}
+
+.estadisticas{
+    width: 80vw;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 1%;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size:20px;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+}
+mat-grid-tile{
+    background: #EAEAEA;
+    border-radius: 10px;
+    text-align: center;
+}

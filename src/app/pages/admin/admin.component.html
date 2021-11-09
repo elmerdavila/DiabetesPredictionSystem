@@ -1,1 +1,17 @@
-<p>admin works!</p>
+<mat-sidenav-container>
+    <mat-sidenav mode='side' [opened]="true">
+  
+        <app-sidebar></app-sidebar>
+  
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-toolbar></app-toolbar>
+      <div class="content mat-elevation-z5">
+  
+        <router-outlet></router-outlet> 
+       
+      </div>
+  
+    </mat-sidenav-content>
+  
+  </mat-sidenav-container>
