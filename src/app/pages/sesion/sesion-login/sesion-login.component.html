@@ -1,3 +1,8 @@
-<h1>Login</h1>
+<div>
+    <h1>Login</h1>
+    <input placeholder="Usuario" #user type="text" >
+    <input placeholder="Contraseña" #pass type="password">
+    <button type="button" class="btn btn-danger" (click)="login(user.value,pass.value)">Ingresar</button>
+    <button type="button" class="btn btn-danger" (click)="auth.logOut()">Ingresar</button>
+</div>
 
-<button type="button" class="btn btn-danger" (click)="goDashboard()">Ingresar</button>

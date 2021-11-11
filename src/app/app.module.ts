@@ -8,6 +8,11 @@ import { SesionRegisterComponent } from './pages/sesion/sesion-register/sesion-r
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './pages/home/toolbar/toolbar.component';
+import { AngularFireModule } from '@angular/fire'; //coneccion a componentes generale sde firebase
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore'; //conecciona firestore
+import { AngularFireAuthModule } from '@angular/fire/auth'; //coneccion al autenticador de firebase 
+
 
 @NgModule({
   declarations: [
@@ -20,7 +25,10 @@ import { ToolbarComponent } from './pages/home/toolbar/toolbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),    
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
 
   providers: [],

@@ -1,2 +1,6 @@
-<h1>Registrarse</h1>
-<button type="button" class="btn btn-primary" (click)="goDashboard()">Ingresar</button>
+<div>
+    <h1>Registrarse</h1>
+    <input placeholder="Usuario" #user type="text" >
+    <input placeholder="Contraseña" #pass type="password">
+    <button type="button" class="btn btn-danger" (click)="registrar(user.value,pass.value)">Ingresar</button>
+</div>

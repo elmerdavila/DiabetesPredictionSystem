@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "saludsoft-9bafc": {
+      "hosting": {
+        "DiabetesPredictionSystem": [
+          "saludsoft-9bafc"
+        ]
+      }
+    }
+  }
+}
