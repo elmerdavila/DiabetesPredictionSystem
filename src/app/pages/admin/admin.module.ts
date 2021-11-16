@@ -19,6 +19,14 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button'
 import { MatGridListModule} from '@angular/material/grid-list';
 import { MatToolbarModule } from '@angular/material/toolbar'
+//Material para la tabla
+import { MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+//Librerias para Formularios
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 @NgModule({
@@ -44,6 +52,10 @@ import { MatToolbarModule } from '@angular/material/toolbar'
     MatButtonModule,
     MatGridListModule,
     MatToolbarModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule,
+    ReactiveFormsModule,
   
   ]
 })
