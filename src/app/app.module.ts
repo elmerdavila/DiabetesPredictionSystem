@@ -12,6 +12,7 @@ import { AngularFireModule } from '@angular/fire'; //coneccion a componentes gen
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore'; //conecciona firestore
 import { AngularFireAuthModule } from '@angular/fire/auth'; //coneccion al autenticador de firebase 
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth'; //coneccion al auten
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),    
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ToastrModule
   ],
 
   providers: [],
