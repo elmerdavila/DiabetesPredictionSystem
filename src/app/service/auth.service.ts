@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { logging } from 'selenium-webdriver';
+import firebase  from 'firebase/app';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private auth : AngularFireAuth) {
+  constructor(private auth : AngularFireAuth,
+    private router:Router) {
     auth.authState.subscribe(user =>{
       console.log(user);
     })
@@ -30,4 +32,11 @@ export class AuthService {
       }
     )
   }
+  googleAuth(){
+    return this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());    
+  }
+  devolverUsuario(){
+    return this.auth.currentUser;
+  }
+
 }

@@ -17,13 +17,24 @@ export class SesionLoginComponent implements OnInit {
      }
 
   ngOnInit(): void {
+    //this.auth.verficarLogin();
   }
-
+  async verification(){
+    try{
+      await this.auth.googleAuth()
+      .then( data => {
+        //console.log(data);
+        this.goDashboard();        
+      });
+    }catch(e:any){
+      //alert(e.message)
+    }
+  }
   async login(user:string,pass:string){
     try{
       await this.auth.login(user,pass)
       .then(data =>{
-        console.log(data);
+        //console.log(data);
         if (data.user.emailVerified){
           this.goDashboard();
         }else{

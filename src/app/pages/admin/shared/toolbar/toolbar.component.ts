@@ -8,18 +8,27 @@ import { AuthService } from 'src/app/service/auth.service';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
-
+  name:string = 'Administrador'
   constructor(
     private router:Router,
-    public auth:AuthService
-    ) { }
-
+    public auth_:AuthService
+    ) { 
+      this.auth_.devolverUsuario()
+      .then(data =>{
+        if (data != null ){
+          this.name = data.displayName;
+        }else{
+          this.router.navigate(['/iniciarSesion'])
+        }        
+      });
+    }
   ngOnInit(): void {
+
   }
 
   async logOut(){
     try{
-      await this.auth.logOut()
+      await this.auth_.logOut()
       .then(data =>{
         console.log(data);
         this.router.navigate(['/home'])
