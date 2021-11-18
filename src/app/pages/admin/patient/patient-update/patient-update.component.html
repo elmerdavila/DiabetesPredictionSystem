@@ -1,56 +1,55 @@
-    <form class="formulario" [formGroup]='formPatient' (ngSubmit)="Editar(formPatient.value)">
+<form class="formulario" [formGroup]='formPatient' (ngSubmit)="Editar(formPatient.value)">
      
-       <div class="titulo" >
-           <span>Formulario para Editar Paciente</span>
-       </div>
-   
-       <div class="contenido-informacion">
-   
-           <div class="row">
-               <h4>Datos Basicos</h4>
-               <div class="col-half input-group input-group-icon"><input type="text" placeholder="Nombre del Paciente" formControlName="nombre" value='{{patient.nombre}}'/>
-                 <div class="input-icon"><i class="fa fa-user"></i></div> <div class="validador" *ngIf="formPatient.get('nombre')?.invalid && formPatient.get('nombre')?.touched">Rellenar el campo</div>
-               </div>
-               <div class="col-half input-group input-group-icon"><input type="text" placeholder="Correo del Paciente" formControlName="correo"  value='{{patient.correo}}'/>
-                 <div class="input-icon"><i class="fa fa-user"></i></div>  <div class="validador" *ngIf="formPatient.get('correo')?.invalid && formPatient.get('correo')?.touched">Rellenar el campo</div>
-               </div>
-               
-           </div>
-           <div class="row">
-               <div class="col-half input-group input-group-icon"><input type="text" placeholder="Celular del Paciente" formControlName="celular"  value='{{patient.celular}}'/>
-                   <div class="input-icon"><i class="fa fa-user"></i></div> <div class="validador" *ngIf="formPatient.get('celular')?.invalid && formPatient.get('celular')?.touched">Rellenar el campo</div>
-               </div>
-               <div class="col-half input-group input-group-icon"><input placeholder="Direccion del Paciente" formControlName="direccion"  value='{{patient.direccion}}'/>
-                   <div class="input-icon"><i class="fa fa-envelope"></i></div> <div class="validador" *ngIf="formPatient.get('direccion')?.invalid && formPatient.get('direccion')?.touched">Rellenar el campo</div>
-               </div>
-           </div>
-           <div class="row">
-               <div class="col-half input-group input-group-icon"><input placeholder="Edad del Paciente" formControlName="edad"  value='{{patient.edad}}'/>
-                 <div class="input-icon"><i class="fa fa-envelope"></i></div> <div class="validador" *ngIf="formPatient.get('edad')?.invalid && formPatient.get('edad')?.touched">Rellenar el campo</div>
-               </div>
-              
-           </div>
-   
+    <div class="titulo" >
+        <span>Formulario para Editar Paciente</span>
+    </div>
+
+    <div class="contenido-informacion">
+
+        <div class="row">
+            <h4>Datos Basicos</h4>
+            <div class="col-half input-group input-group-icon"><input type="text" placeholder="Nombre del Paciente" formControlName="nombre" value='{{patient.nombre}}'/>
+              <div class="input-icon"><mat-icon>person_pin</mat-icon></div> <div class="validador" *ngIf="formPatient.get('nombre')?.invalid && formPatient.get('nombre')?.touched">Rellenar el campo</div>
+            </div>
+            <div class="col-half input-group input-group-icon"><input type="text" placeholder="Correo del Paciente" formControlName="correo"  value='{{patient.correo}}'/>
+              <div class="input-icon"><mat-icon>email</mat-icon></div>  <div class="validador" *ngIf="formPatient.get('correo')?.invalid && formPatient.get('correo')?.touched">Rellenar el campo</div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-half input-group input-group-icon"><input type="text" placeholder="Celular del Paciente" formControlName="celular"  value='{{patient.celular}}'/>
+                <div class="input-icon"><mat-icon>phone_in_talk</mat-icon></div> <div class="validador" *ngIf="formPatient.get('celular')?.invalid && formPatient.get('celular')?.touched">Rellenar el campo</div>
+            </div>
+            <div class="col-half input-group input-group-icon"><input placeholder="Direccion del Paciente" formControlName="direccion"  value='{{patient.direccion}}'/>
+                <div class="input-icon"><mat-icon>home</mat-icon></div> <div class="validador" *ngIf="formPatient.get('direccion')?.invalid && formPatient.get('direccion')?.touched">Rellenar el campo</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-half input-group input-group-icon"><input placeholder="Edad del Paciente" formControlName="edad"  value='{{patient.edad}}' min="0" max="120"/>
+              <div class="input-icon"><mat-icon>date_range</mat-icon></div> <div class="validador" *ngIf="formPatient.get('edad')?.invalid && formPatient.get('edad')?.touched">Rellenar el campo</div>
+            </div>
            
-           <div class="row">
-               <h4>Genero del Paciente</h4>
-                   <div class="input-group">
-                       <input id="Activo" type="radio" name="genero" value="Masculino" formControlName="genero" checked="{{patient.genero=='Masculino'}}" />
-                       <label for="Activo"><span><i class="fa fa-cc-visa"></i>Masculino</span></label>
-   
-                       <input id="Inactivo" type="radio" name="genero" value="Femenino" formControlName="genero" checked="{{patient.genero=='Femenino'}}"/>
-                       <label for="Inactivo"> <span><i class="fa fa-cc-paypal"></i>Femenino</span></label>
-                       
-                   </div>
-                   
-           </div>
-           
-       </div>
-       
-       <div mat-dialog-actions>
-           <button type="submit" >Editar Paciente</button>
-       </div>
-   
-       
-   </form>
-   
+        </div>
+
+        
+        <div class="row">
+            <h4>Genero del Paciente Registrado</h4>
+                <div class="input-group">
+                    <input id="Activo" type="radio" name="genero" value="Masculino" formControlName="genero" checked="{{patient.genero=='Masculino'}}" />
+                    <label for="Activo"><span>Masculino</span></label>
+
+                    <input id="Inactivo" type="radio" name="genero" value="Femenino" formControlName="genero" checked="{{patient.genero=='Femenino'}}"/>
+                    <label for="Inactivo"><span>Femenino</span></label>
+                    
+                </div>
+                
+        </div>
+        
+    </div>
+    
+    <div mat-dialog-actions>
+        <button type="submit" >Editar Paciente</button>
+    </div>
+
+    
+</form>
