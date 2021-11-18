@@ -42,13 +42,27 @@ export class PatientService {
      });
    }
 
-   public getPatients():Observable<any>{
-     return this.patientsCollection.snapshotChanges().pipe(
-       map(actions => actions.map(a => a.payload.doc.data() as Patient))
-     )
+   public UpdatePatient(patient:Patient, patientId:string):Promise<void>{
+    return new Promise( async (resolve,reject) => {
+      try{
+         const id = patientId || this.angularfirestore.createId();
+         const data = {id, ... patient};
+         const result= await this.patientsCollection.doc(id).set(data);
+         resolve(result);
+      }
+      catch(error){
+        reject(error.mesaje)
+      }
+    });
+  }
+
+  public getPatients():Observable<any>{
+    return this.patientsCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => a.payload.doc.data() as Patient))
+    )
 
   
-   }
+  }
 
 
 }

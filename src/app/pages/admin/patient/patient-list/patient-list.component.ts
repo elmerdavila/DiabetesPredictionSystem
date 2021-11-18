@@ -5,6 +5,9 @@ import { MatSort} from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table'
 import { Patient } from 'src/app/models/Patient.interface';
 import { PatientService } from 'src/app/service/patient.service';
+import { MatDialog } from '@angular/material/dialog';
+import { PatientUpdateComponent } from '../patient-update/patient-update.component';
+import { PatientDeleteComponent } from '../patient-delete/patient-delete.component';
 
 
 @Component({
@@ -21,7 +24,8 @@ export class PatientListComponent implements OnInit {
   public pacientes:Patient[]=[];
   public dataSource= new MatTableDataSource();
 
-  constructor(private router:Router, private patientServie:PatientService) { }
+  constructor(private router:Router, private patientServie:PatientService,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.listarPacientes();
@@ -45,9 +49,9 @@ export class PatientListComponent implements OnInit {
       .subscribe
       (
         (response) =>{
-          console.log(response)
+          //console.log(response)
           this.pacientes= (response as any);
-          console.log(this.pacientes)
+          //console.log(this.pacientes)
           this.dataSource = new MatTableDataSource(this.pacientes);
           this.ngAfterViewInit();
         },
@@ -59,5 +63,29 @@ export class PatientListComponent implements OnInit {
 
   public goNewPatient(){
     this.router.navigate(['/administracion/nuevoPaciente'])
+  }
+  
+  public goUpdatePatient(patient:Patient){
+    const dialogRef = this.dialog.open(PatientUpdateComponent, {
+      //width: '61%', 
+      data: {data: patient},
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.listarPacientes();
+    });
+  }
+  
+  public goToPatientDelete(patient:Patient){
+    const dialogRef = this.dialog.open(PatientDeleteComponent, {
+      //width: '61%', 
+      data: {data: patient},
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.listarPacientes();
+    });
   }
 }
