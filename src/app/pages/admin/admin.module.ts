@@ -24,7 +24,9 @@ import { MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 //Librerias para Formularios
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
+import { PatientDeleteComponent } from './patient/patient-delete/patient-delete.component';
 
 
 
@@ -40,6 +42,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ExamViewComponent,
     SidebarComponent,
     ToolbarComponent,
+    PatientDeleteComponent,
     
  
   ],
@@ -55,8 +58,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
+    FormsModule,
     ReactiveFormsModule,
-  
+    MatDialogModule,
   ]
 })
 export class AdminModule { }

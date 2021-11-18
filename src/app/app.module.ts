@@ -11,7 +11,8 @@ import { ToolbarComponent } from './pages/home/toolbar/toolbar.component';
 import { AngularFireModule } from '@angular/fire'; //coneccion a componentes generale sde firebase
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore'; //conecciona firestore
-import { AngularFireAuthModule } from '@angular/fire/auth'; //coneccion al autenticador de firebase 
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; //coneccion al autenticador de firebase 
 
 
 
@@ -30,6 +31,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth'; //coneccion al auten
     AngularFireModule.initializeApp(environment.firebaseConfig),    
     AngularFireAuthModule,
     AngularFirestoreModule,
+    NgbModule,
 
   ],
 
