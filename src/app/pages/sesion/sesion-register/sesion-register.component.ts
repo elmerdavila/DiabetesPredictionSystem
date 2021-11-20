@@ -27,6 +27,7 @@ export class SesionRegisterComponent implements OnInit {
         console.log(data);
         this.auth.verificarCorreo()
         alert("Por favor ingrese a su correo electronico para confirmar el registro e ingrese nuevamente en la aplicacion")
+        //crear Doctor
       })
       
     }catch (e:any) {
