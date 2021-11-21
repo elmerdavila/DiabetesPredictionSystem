@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
+import { DoctorService } from 'src/app/service/doctor.service';
 
 @Component({
   selector: 'app-sesion-login',
@@ -11,7 +12,8 @@ export class SesionLoginComponent implements OnInit {
 
   constructor(
     private router:Router,
-    public auth:AuthService
+    public auth:AuthService,
+    public doctorService:DoctorService
     ) {
       
      }
@@ -23,7 +25,7 @@ export class SesionLoginComponent implements OnInit {
     try{
       await this.auth.googleAuth()
       .then( data => {
-        //console.log(data);
+        this.guardarDoctor(data.user.email);
         this.goDashboard();        
       });
     }catch(e:any){
@@ -35,7 +37,9 @@ export class SesionLoginComponent implements OnInit {
       await this.auth.login(user,pass)
       .then(data =>{
         //console.log(data);
+
         if (data.user.emailVerified){
+          this.guardarDoctor(data.user.email);
           this.goDashboard();
         }else{
           alert("Por favor ingrese a su correo electronico para confirmar el registro e ingrese nuevamente en la aplicacion");
@@ -49,6 +53,9 @@ export class SesionLoginComponent implements OnInit {
   }
   public goDashboard(){    
     this.router.navigate(["/administracion"]);    
+  }
+  public guardarDoctor(email:string){
+    this.doctorService.createDoctor(email);
   }
 
 }

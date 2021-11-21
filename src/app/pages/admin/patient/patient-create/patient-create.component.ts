@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Patient } from 'src/app/models/Patient.interface';
 import { PatientService } from 'src/app/service/patient.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-patient-create',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class PatientCreateComponent implements OnInit {
 
-
+  email:string = 'Administrador'
   public  formPatient:FormGroup=this.fb.group({
     nombre: ['',[Validators.required]],
     correo: ['',[Validators.required]],
@@ -21,7 +22,17 @@ export class PatientCreateComponent implements OnInit {
     genero: ['',[Validators.required]],
   });
 
-  constructor(private fb:FormBuilder,private servicePatient:PatientService, private router:Router) {
+  constructor(private fb:FormBuilder,private servicePatient:PatientService, private router:Router,  
+    private patientServie:PatientService,
+    public authservice:AuthService ) {
+      this.authservice.devolverUsuario()
+      .then(data =>{
+        if (data != null ){
+          this.email = data.email;
+        }else{
+          this.router.navigate(['/iniciarSesion'])
+        }        
+      });
     const navigation= this.router.getCurrentNavigation();
    }
 
@@ -30,7 +41,8 @@ export class PatientCreateComponent implements OnInit {
 
   public guardarPaciente(){
     const newPatient=this.formPatient.value;
-    this.servicePatient.createPatient(newPatient,null);
+    //this.servicePatient.createPatient(newPatient,null);
+    this.servicePatient.createPatient2(this.email,newPatient,null);
     this.router.navigate(['/administracion/pacientes'])
   }
 

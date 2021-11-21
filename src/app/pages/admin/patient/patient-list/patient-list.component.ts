@@ -8,6 +8,7 @@ import { PatientService } from 'src/app/service/patient.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PatientUpdateComponent } from '../patient-update/patient-update.component';
 import { PatientDeleteComponent } from '../patient-delete/patient-delete.component';
+import { AuthService } from 'src/app/service/auth.service';
 
 
 @Component({
@@ -24,8 +25,23 @@ export class PatientListComponent implements OnInit {
   public pacientes:Patient[]=[];
   public dataSource= new MatTableDataSource();
 
-  constructor(private router:Router, private patientServie:PatientService,
-    public dialog: MatDialog) { }
+  email:string = 'Administrador'
+
+  constructor(
+    private router:Router, 
+    private patientServie:PatientService,
+    public dialog: MatDialog,
+    public authservice:AuthService
+    ) { 
+      this.authservice.devolverUsuario()
+      .then(data =>{
+        if (data != null ){
+          this.email = data.email;
+        }else{
+          this.router.navigate(['/iniciarSesion'])
+        }        
+      });
+    }
 
   ngOnInit(): void {
     this.listarPacientes();
@@ -45,7 +61,8 @@ export class PatientListComponent implements OnInit {
     }
   }
   public listarPacientes(){
-    this.patientServie.getPatients()
+    this.patientServie.getPatients2(this.email) //modificado
+    //this.patientServie.getPatients() //modificado
       .subscribe
       (
         (response) =>{
