@@ -1,8 +1,16 @@
-<div>
-    <h1>Login</h1>
-    <input placeholder="Usuario" #user type="text" >
-    <input placeholder="Contraseña" #pass type="password">
-    <button type="button" class="btn btn-danger" (click)="login(user.value,pass.value)">Ingresar</button>
-    <button type="button" class="btn btn-danger" (click)="verification()">Ingresar con Google </button>
+<div class="centrar_formulario">
+<div class="form-signin text-center">
+    <img class="mb-4" src="../assets/logo_fondo_transparente.png" alt="" width="100">
+    <h1 class="h3 mb-3 fw-normal">Login</h1>
+    <div class="form-floating">
+        <input id="floatingInput" placeholder="Usuario" #user type="email" class="form-control">
+        <label for="floatingInput">Usuario</label>
+    </div>
+    <div class="form-floating">
+        <input placeholder="Contraseña" #pass type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Contraseña</label>
+    </div>
+    <button type="button" class="w-100 btn btn-lg btn-primary" (click)="login(user.value,pass.value)">Ingresar</button><div style="padding-top:10px"><div>
+    <button type="button" class="w-100 btn btn-lg btn-danger" (click)="verification()">Ingresar con Google </button>
 </div>
-
+</div>
