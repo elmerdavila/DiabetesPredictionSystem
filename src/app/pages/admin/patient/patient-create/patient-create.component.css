@@ -1,32 +1,25 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-.container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-   align-items: center;
-}
 .formulario {
-   
-    width: 50%;
-    margin: auto; 
+    width: 100%;
+    margin: 0.5% 0;
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
     color: #d1d1d1;
     border: 3px solid #021b6ce7;
     border-radius: 20px;
-    padding: 4%;
+    padding: 1%;
 }
 
 .titulo{
-  background-color: #001b70e7;
-  width: 100%;
-  height: 4.3rem;
-  margin: 0.5% auto;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  text-align: center;
+    background-color: #001b70e7;
+    width: 100%;
+    height: 4rem;
+    margin: 0.5% auto;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 .titulo span{
@@ -38,7 +31,6 @@
     display: block;
     margin: 0 auto;
     text-align: center;
-
 }
 .contenido-informacion{
     color: black;
@@ -52,11 +44,11 @@
   color: red;
   font-size: 0.7rem;
 }
+
 .input-group {
   margin-bottom: 1em;
   display: inline-block;
   width: 100%;
-
   
 }
 h4{
@@ -72,7 +64,7 @@ h4{
   padding-left: 4em;
 }
 .input-group-icon textarea {
-  padding-left: 4.4em;
+  padding-left: 4em;
 }
 .input-group-icon .input-icon {
   position: absolute;
@@ -138,26 +130,25 @@ textarea{
 }
 
 textarea{
-    height: 7rem;
-    min-height: 7rem;
-    max-height: 8rem;
-}
-.container-button{
-   display: flex;
-   align-items: center;
+    height: 3.5rem;
+    min-height: 3.5rem;
+    max-height: 5rem;
 }
 button{
-    margin: 2% auto;
-    padding: 2% 9%;
-    border-radius: 4%;
-    margin-bottom: 2%;
-    border: 3px solid #002f95;
-    background-color: white;
-    color:#002f95;
+  margin: 0 auto;
+  padding: 2% 21%;
+  border-radius: 3%;
+  border: 1px solid #002f95;
+  background-color: white;
+  color:#002f95;
 }
 button:hover{
   background-color:#002f95;
   color: white;
+}
+.botonc{
+  padding: 0%;
+  margin: 0%;
 }
 
 
@@ -172,7 +163,7 @@ select option,
 select {
   width: 100%;
   padding: 0.8em;
-  
+  /*line-height: 1.4;*/
   background-color: #f9f9f9;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
@@ -181,7 +172,7 @@ select {
   -o-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 input:focus,
 textarea:focus {
@@ -198,21 +189,14 @@ textarea:focus  + .input-icon:after{
 }
 input[type="radio"] {
   display: none;
-  
 }
-input[type="radio"] + label{
+input[type="radio"] + label,
+select {
   display: block;
   width: 50%;
   text-align: center;
   float: left;
   border-radius: 0;
-}
-select {
-    width: 100%;
-    text-align-last: center;
-    padding: auto 100px;
-    background-color: #002f95;
-    color: white;
 }
 input[type="radio"] + label:first-of-type {
   border-top-left-radius: 3px;

@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PatientUpdateComponent } from '../patient-update/patient-update.component';
 import { PatientDeleteComponent } from '../patient-delete/patient-delete.component';
 import { AuthService } from 'src/app/service/auth.service';
+import { PatientCreateComponent } from '../patient-create/patient-create.component';
 
 
 @Component({
@@ -79,7 +80,13 @@ export class PatientListComponent implements OnInit {
   }
 
   public goNewPatient(){
-    this.router.navigate(['/administracion/nuevoPaciente'])
+    const dialogRef = this.dialog.open(PatientCreateComponent, {
+      width: '45%', 
+      
+    });
+    dialogRef.afterClosed().subscribe(result => {
+  
+    });
   }
   
   public goUpdatePatient(patient:Patient){

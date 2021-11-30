@@ -13,11 +13,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public goSesionLogin(){
-    this.router.navigate(["/iniciarSesion"]);
-  }
-  public goSesionRegister(){
-    this.router.navigate(["/registrarse"]);
-  }
+
 
 }

@@ -7,12 +7,14 @@ import { SesionLoginComponent } from './pages/sesion/sesion-login/sesion-login.c
 import { SesionRegisterComponent } from './pages/sesion/sesion-register/sesion-register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToolbarComponent } from './pages/home/toolbar/toolbar.component';
 import { AngularFireModule } from '@angular/fire'; //coneccion a componentes generale sde firebase
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore'; //conecciona firestore
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; //coneccion al autenticador de firebase 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from './pages/home/header/header.component';
+import { FooterComponent } from './pages/home/footer/footer.component';
+import { SliderComponent } from './pages/home/slider/slider.component'; //coneccion al autenticador de firebase 
 
 
 
@@ -22,7 +24,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; //coneccion al autentica
     SesionLoginComponent,
     SesionRegisterComponent,
     HomeComponent,
-    ToolbarComponent
+    HeaderComponent,
+    FooterComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,

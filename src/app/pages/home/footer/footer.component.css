@@ -1,0 +1,12 @@
+
+footer{
+    width: 100vw;
+    display:inline-block;
+}
+.container{
+    width: 100vw;
+}
+img{
+    width: 10vw;
+    height: 10vh;
+}
