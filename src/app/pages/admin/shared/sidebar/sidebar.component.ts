@@ -16,8 +16,6 @@ export class SidebarComponent implements OnInit {
   public goPatients(){
     this.router.navigate(['/administracion/pacientes'])
   }
-  public goExams(){
-    this.router.navigate(['/administracion/listaExamenes'])
-  }
+
 
 }

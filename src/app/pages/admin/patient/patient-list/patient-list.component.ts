@@ -112,4 +112,8 @@ export class PatientListComponent implements OnInit {
       this.listarPacientes();
     });
   }
+
+  public goToViewPatient(patient:Patient){
+    this.router.navigate(['/administracion/listaExamenes'])
+  }
 }
