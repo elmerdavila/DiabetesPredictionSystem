@@ -22,7 +22,10 @@ export class PatientCreateComponent implements OnInit {
     genero: ['',[Validators.required]],
   });
 
-  constructor(private fb:FormBuilder,private servicePatient:PatientService, private router:Router,  
+  constructor(
+    private fb:FormBuilder,
+    private servicePatient:PatientService, 
+    private router:Router,  
     private patientServie:PatientService,
     public authservice:AuthService ) {
       this.authservice.devolverUsuario()

@@ -1,0 +1,21 @@
+export interface Exam{
+    id?: string,
+    polyura:boolean,
+    polydipsia:boolean,
+    weigtht_loss:boolean,
+    weakness:boolean,
+    polyfagia:boolean,
+    genital_thrush:boolean,
+    visual_blurring:boolean,
+    itchinf:boolean,
+    irritabilty:boolean,
+    delayed_healing:boolean,
+    partial_paresis:boolean,
+    muscle_stiffness:boolean,
+    Alopecia:boolean,
+    Obesity:boolean,
+    results:string,
+    coments:string,
+    notification:string,
+    date:string
+}
