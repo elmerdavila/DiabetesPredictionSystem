@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Pacifico&family=Poppins:ital,wght@0,400;1,300&display=swap');
 
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
+    
     text-decoration: none;
 }
 
@@ -89,20 +91,25 @@ footer{
     margin-bottom: 30px;
     color: #eeeeee;
     font-weight: 700;
+    font-family: 'Poppins';
 }
 
 .box__footer a{
     margin-top: 10px;
     color: #eeeeee;
+    font-size: 15px;
     font-weight: 600;
+    font-family: 'Poppins';
 }
 
 .box__footer a:hover{
     opacity: 0.8;
+    font-family: 'Poppins';
 }
 
-.box__footer .input-icon .fa{
-    font-size: 20px;
+.box__footer a .fa{
+    font-size: 50px;
+    font-family: 'Poppins';
 }
 
 .box__copyright{
@@ -115,6 +122,7 @@ footer{
 .box__copyright p{
     margin-top: 20px;
     color: #eeeeee;
+    font-family: 'Poppins';
 }
 
 .box__copyright hr{
