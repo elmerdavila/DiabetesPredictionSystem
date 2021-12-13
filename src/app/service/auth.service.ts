@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import firebase  from 'firebase/app';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,10 @@ export class AuthService {
     })
    }
   login(user:string , pass:string){
-    return this.auth.signInWithEmailAndPassword(user,pass);
+
+      return this.auth.signInWithEmailAndPassword(user,pass);
+ 
+
   }
   logOut(){
     return this.auth.signOut();

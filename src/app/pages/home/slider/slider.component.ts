@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -19,7 +20,7 @@ export class SliderComponent implements OnInit {
   ];
 
 
-  constructor(private _config:NgbCarouselConfig) {
+  constructor(private _config:NgbCarouselConfig, private router:Router) {
     _config.interval = 3000;
     _config.pauseOnHover = false;
     _config.showNavigationArrows = true;
@@ -28,5 +29,8 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
+  public goToIniciarSesion(){
+    this.router.navigate(['/iniciarSesion'])
+  }
 }

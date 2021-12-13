@@ -18,5 +18,13 @@ import { AngularFireAuth } from '@angular/fire/auth';
         map(actions => actions.map(a => a.payload.doc.data() as Exam))
       )  
     }
+
+    public createExam(exam:Exam){
+
+    }
+
+    public generarResultados(exam:Exam){
+      
+    }
     
 }
