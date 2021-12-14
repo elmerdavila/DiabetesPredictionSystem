@@ -9,6 +9,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
     providedIn: 'root'
   })
   export class ExamService {  
+    private urlGenerarResultados='https://saludsoft.herokuapp.com/predict/';
     constructor(
       private angularfirestore: AngularFirestore) {     
      }
@@ -20,11 +21,12 @@ import { AngularFireAuth } from '@angular/fire/auth';
     }
 
     public createExam(exam:Exam){
-
+      console.log(exam)
     }
 
     public generarResultados(exam:Exam){
-      
+      console.log(exam)
+
     }
     
 }

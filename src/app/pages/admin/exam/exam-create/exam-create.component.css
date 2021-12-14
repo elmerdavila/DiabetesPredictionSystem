@@ -147,22 +147,6 @@ textarea:focus  + .input-icon:after{
   padding-right: 0;
 }
 
-button{
-    margin: 1.5% auto;
-    padding: 5% 7%;
-    border-radius: 4%;
-    border: 3px solid #002f95;
-    background-color: white;
-    color:#002f95;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-button:hover{
-  background-color:#002f95;
-  color: white;
-}
-
 
 /*NUEVO CSS *****************************************/
 
@@ -220,3 +204,34 @@ select:focus{
 label span{
   margin: 0%;
 }
+.fila-botones{
+  margin-top: 5%;
+}
+.boton-generar{
+  border: 3px solid #0c61c2;
+  background-color: white;
+  color:#0c61c2;
+}
+.boton-guardar{
+  border: 3px solid rgba(207, 9, 9, 0.774);
+  background-color: white;
+  color:rgba(207, 9, 9, 0.774);
+  
+}
+
+button{
+  margin: 1.5% auto;
+  padding: 5% 7%;
+  border-radius: 4%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.boton-generar:hover{
+background-color:#0c61c2;
+color: white;
+}
+.boton-guardar:hover{
+  background-color:rgba(207, 9, 9, 0.774);
+  color: white;
+  }

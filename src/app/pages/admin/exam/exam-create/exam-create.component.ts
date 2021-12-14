@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Exam } from 'src/app/models/Exam.interface';
+import { ExamService } from 'src/app/service/exam.service';
 
 @Component({
   selector: 'app-exam-create',
@@ -30,13 +31,13 @@ export class ExamCreateComponent implements OnInit {
     date: new FormControl(''),
   });
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, private examService:ExamService) { }
 
   ngOnInit(): void {
   }
 
   public guardarExamen(){
-
+    this.examService.createExam(this.formularioExamen.value)
   }
 
 }
