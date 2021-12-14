@@ -27,6 +27,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { PatientDeleteComponent } from './patient/patient-delete/patient-delete.component';
+import { ExamUpdateComponent } from './exam/exam-update/exam-update.component';
 
 
 
@@ -43,6 +44,7 @@ import { PatientDeleteComponent } from './patient/patient-delete/patient-delete.
     SidebarComponent,
     ToolbarComponent,
     PatientDeleteComponent,
+    ExamUpdateComponent,
     
  
   ],

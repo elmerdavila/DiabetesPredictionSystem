@@ -68,6 +68,12 @@ export class ExamListComponent implements OnInit {
   public goNewExam(){
     this.router.navigate(['/administracion/nuevoExamen'])
   }
+  public goUpdateExam(){
+    this.router.navigate(['/administracion/actualizarExamen'])
+  }
+  public goViewExam(){
+    this.router.navigate(['/administracion/verExamen'])
+  }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
