@@ -42,8 +42,6 @@
 
 <div class="right">
     <button type="button" class="btn btn-primary" (click)="goNewExam()">Nuevo Examen</button>
-    <button type="button" class="btn btn-danger" (click)="goUpdateExam()">Actualizar Examen</button>
-    <button type="button" class="btn btn-success" (click)="goViewExam()">Ver Examen</button>
 </div>
 
 <br>
@@ -80,8 +78,8 @@
       <ng-container matColumnDef="Acciones">
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let element" class="botones">
-          <button type="button" class="btn btn-outline-warning" (click)="goToViewPatient(element)"><mat-icon>remove_red_eye</mat-icon></button> 
-          <button type="button" class="btn btn-outline-info mx-2" (click)="goUpdatePatient(element)" ><mat-icon>edit</mat-icon></button>
+          <button type="button" class="btn btn-outline-warning" (click)="goViewExam(element)"><mat-icon>remove_red_eye</mat-icon></button> 
+          <button type="button" class="btn btn-outline-danger"  (click)="goDeleteExam(element)"><mat-icon>restore_from_trash</mat-icon></button>
         </td>
       </ng-container>
       

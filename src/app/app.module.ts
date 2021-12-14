@@ -16,7 +16,7 @@ import { HeaderComponent } from './pages/home/header/header.component';
 import { FooterComponent } from './pages/home/footer/footer.component';
 import {MatIconModule} from '@angular/material/icon';
 import { SliderComponent } from './pages/home/slider/slider.component'; //coneccion al autenticador de firebase 
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -38,6 +38,7 @@ import { SliderComponent } from './pages/home/slider/slider.component'; //conecc
     AngularFirestoreModule,
     NgbModule,
     MatIconModule,
+    HttpClientModule,
 
   ],
 

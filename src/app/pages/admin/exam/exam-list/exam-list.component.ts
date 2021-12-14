@@ -47,7 +47,7 @@ export class ExamListComponent implements OnInit {
     this.activateRoute.params
     .subscribe((params: Patient) =>{
        this.paciente = params
-       console.log(params)
+       console.log("Estos son los parametros del paciente",params)
       });
     this.listarExamenes();
   }
@@ -66,13 +66,14 @@ export class ExamListComponent implements OnInit {
       )
   }
   public goNewExam(){
-    this.router.navigate(['/administracion/nuevoExamen'])
+    this.router.navigate(['/administracion/nuevoExamen',this.paciente])
   }
-  public goUpdateExam(){
-    this.router.navigate(['/administracion/actualizarExamen'])
+  public goDeleteExam(exam:Exam){
+    this.examService.deleteExam(exam,this.paciente.id)
+    this.listarExamenes();
   }
-  public goViewExam(){
-    this.router.navigate(['/administracion/verExamen'])
+  public goViewExam(exam:Exam){
+    this.router.navigate(['/administracion/verExamen',exam])
   }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
