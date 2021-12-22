@@ -92,7 +92,7 @@ export class PatientListComponent implements OnInit {
   public goUpdatePatient(patient:Patient){
     const dialogRef = this.dialog.open(PatientUpdateComponent, {
       //width: '61%', 
-      data: {data: patient},
+      data: {data: patient,doctor:this.email},
       
     });
 
@@ -104,7 +104,7 @@ export class PatientListComponent implements OnInit {
   public goToPatientDelete(patient:Patient){
     const dialogRef = this.dialog.open(PatientDeleteComponent, {
       //width: '61%', 
-      data: {data: patient},
+      data: {data: patient,doctor:this.email},
       
     });
 

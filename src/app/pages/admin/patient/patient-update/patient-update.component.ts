@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { FormBuilder,  Validators } from '@angular/forms';
 import { Patient } from 'src/app/models/Patient.interface';
 import { PatientService } from 'src/app/service/patient.service';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-patient-update',
@@ -14,6 +15,7 @@ import { PatientService } from 'src/app/service/patient.service';
   styleUrls: ['./patient-update.component.css']
 })
 export class PatientUpdateComponent implements OnInit {
+  email:string = 'Administrador'
 
   public patient:Patient={
     id:'',
@@ -42,9 +44,11 @@ export class PatientUpdateComponent implements OnInit {
     public dialogRef: MatDialogRef<PatientUpdateComponent>,
     private fb:FormBuilder,
     private servicePatient:PatientService, 
-    private router:Router, 
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public authservice:AuthService,private router:Router
     ) {
+
+      
   }
 
   ngOnInit(): void {
@@ -60,7 +64,7 @@ export class PatientUpdateComponent implements OnInit {
     console.log(this.data.data)
     console.log(formulario)
     const newPatient=this.formPatient.value;
-    this.servicePatient.UpdatePatient(newPatient,this.data.data.id);
+    this.servicePatient.UpdatePatient2(this.data.doctor, newPatient,this.data.data.id);
     this.dialogRef.close();
     this.router.navigate(['/administracion/pacientes'])
   }

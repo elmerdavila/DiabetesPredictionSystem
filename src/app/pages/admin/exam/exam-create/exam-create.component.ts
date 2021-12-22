@@ -86,24 +86,24 @@ export class ExamCreateComponent implements OnInit {
         '</div>'*/
       
       
-      "Tu examen tiene los siguientes resultados:"+
-      "polyura:"+(examen.polyura?"Presente":"No presente")+
-      "polydipsia:"+(examen.polydipsia?"Presente":"No presente")+
-      "weigtht loss:"+(examen.weigtht_loss?"Presente":"No presente")+
-      "weakness:"+(examen.weakness?"Presente":"No presente")+
-      "polyfagia:"+(examen.polyfagia?"Presente":"No presente")+
-      "genital thrush:"+(examen.genital_thrush?"Presente":"No presente")+
-      "visual blurring:"+(examen.visual_blurring?"Presente":"No presente")+
-      "irritabilty:"+(examen.irritabilty?"Presente":"No presente")+
-      "delayed healing:"+(examen.delayed_healing?"Presente":"No presente")+
-      "partial paresis:"+(examen.partial_paresis?"Presente":"No presente")+
-      "muscle stiffness:"+(examen.muscle_stiffness?"Presente":"No presente")+
-      "Alopecia:"+(examen.Alopecia?"Presente":"No presente")+
-      "Obesity:"+(examen.Obesity?"Presente":"No presente")+
-      "results:"+examen.results+
-      "coments:"+examen.coments+
-      "notification:"+examen.notification+
-      "date:"+examen.date
+      "Tu examen tiene los siguientes resultados: \n"+
+      "\n polyura: "+(examen.polyura?"Presente":"No presente")+
+      "\n polydipsia: "+(examen.polydipsia?"Presente":"No presente")+
+      "\n weigtht loss: "+(examen.weigtht_loss?"Presente":"No presente")+
+      "\n weakness: "+(examen.weakness?"Presente":"No presente")+
+      "\n polyfagia: "+(examen.polyfagia?"Presente":"No presente")+
+      "\n genital thrush: "+(examen.genital_thrush?"Presente":"No presente")+
+      "\n visual blurring: "+(examen.visual_blurring?"Presente":"No presente")+
+      "\n irritabilty: "+(examen.irritabilty?"Presente":"No presente")+
+      "\n delayed healing: "+(examen.delayed_healing?"Presente":"No presente")+
+      "\n partial paresis: "+(examen.partial_paresis?"Presente":"No presente")+
+      "\n muscle stiffness: "+(examen.muscle_stiffness?"Presente":"No presente")+
+      "\n Alopecia: "+(examen.Alopecia?"Presente":"No presente")+
+      "\n Obesity: "+(examen.Obesity?"Presente":"No presente")+
+      "\n results: "+examen.results+
+      "\n coments: "+examen.coments+
+      "\n notification: "+examen.notification+
+      "\n Fecha: "+examen.date
       
       let curso=new Email(correo==null?"dcruzch22i@gmail.com":correo,"RESULTADOS DE EXAMEN",mensaje);
       this.service.enviarEmail(curso)

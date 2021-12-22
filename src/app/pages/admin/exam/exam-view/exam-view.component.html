@@ -5,36 +5,86 @@
     <div class="contenido-informacion">
         <div class="row">
           <div class="col-third">
+            
             <h4>Polyura</h4>
-            <div >presenta: {{examen.polyura}}</div>
-            <h4>Perdida de Peso {{examen.weigtht_loss}}</h4>
-            <div >presenta: {{examen.weigtht_loss}}</div>
-            <h4>Polifagia {{examen.polyfagia}}</h4>
-            <div >presenta: {{examen.polyfagia}}</div>
-            <h4>Desenfoque Visual {{examen.visual_blurring}}</h4>
-            <div >presenta: {{examen.visual_blurring}}</div>
+            <div *ngIf="polyura; then thenBlock_1 else elseBlock_1"></div>
+            <ng-template #thenBlock_1>Presenta : Si</ng-template>
+            <ng-template #elseBlock_1>Presenta : No</ng-template>
+
+            <h4>Perdida de Peso</h4>
+            <div *ngIf="weigtht_loss; then thenBlock_2 else elseBlock_2"></div>
+            <ng-template #thenBlock_2>Presenta : Si</ng-template>
+            <ng-template #elseBlock_2>Presenta : No</ng-template>
+
+            <h4>Polifagia</h4>
+            <div *ngIf="polyfagia; then thenBlock_3 else elseBlock_3"></div>
+            <ng-template #thenBlock_3>Presenta : Si</ng-template>
+            <ng-template #elseBlock_3>Presenta : No</ng-template>
+
+            <h4>Desenfoque Visual</h4>
+            <div *ngIf="visual_blurring; then thenBlock_4 else elseBlock_4"></div>
+            <ng-template #thenBlock_4>Presenta : Si</ng-template>
+            <ng-template #elseBlock_4>Presenta : No</ng-template>
+
             <h4>Irritabilidad</h4>
-            <div >presenta: {{examen.irritabilty}}</div>
+            <div *ngIf="irritabilty; then thenBlock_5 else elseBlock_5"></div>
+            <ng-template #thenBlock_5>Presenta : Si</ng-template>
+            <ng-template #elseBlock_5>Presenta : No</ng-template>
+
             <h4>Paresia Parcial</h4>
-            <div >presenta: {{examen.partial_paresis}}</div>
-            <h4>Alopecia {{examen.Alopecia}}</h4>
-            <div >presenta: {{examen.Alopecia}}</div>
+            <div *ngIf="partial_paresis; then thenBlock_6 else elseBlock_6"></div>
+            <ng-template #thenBlock_6>Presenta : Si</ng-template>
+            <ng-template #elseBlock_6>Presenta : No</ng-template>
+
+            <h4>Alopecia </h4>
+            <div *ngIf="Alopecia; then thenBlock_7 else elseBlock_7"></div>
+            <ng-template #thenBlock_7>Presenta : Si</ng-template>
+            <ng-template #elseBlock_7>Presenta : No</ng-template>
+
           </div>
           <div class="col-third">
-            <h4>Polydipsia {{examen.polydipsia}}</h4>
-            <div >presenta: {{examen.polydipsia}}</div>
-            <h4>Sensacion de Debilidad {{examen.weakness}}</h4>
-            <div >presenta: {{examen.weakness}}</div>
-            <h4>Candidiasis Genital {{examen.genital_thrush}}</h4>
-            <div >presenta: {{examen.genital_thrush}}</div>
-            <h4>Comezón {{examen.itchinf}}</h4>
-            <div >presenta: {{examen.itchinf}}</div>
-            <h4>curación retrasada {{examen.delayed_healing}}</h4>
-            <div >presenta: {{examen.delayed_healing}}</div>
-            <h4>Rigidez Muscular {{examen.muscle_stiffness}}</h4>
-            <div >presenta: {{examen.muscle_stiffness}}</div>
-            <h4>Obesidad {{examen.Obesity}}</h4>
-            <div >presenta: {{examen.Obesity}}</div>
+
+
+            <h4>Polydipsia </h4>
+            <div *ngIf="polydipsia ; then thenBlock_8 else elseBlock_8"></div>
+            <ng-template #thenBlock_8>Presenta : Si</ng-template>
+            <ng-template #elseBlock_8>Presenta : No</ng-template>
+
+            
+            <h4>Sensacion de Debilidad</h4>
+            <div *ngIf="weakness ; then thenBlock_9 else elseBlock_9"></div>
+            <ng-template #thenBlock_9>Presenta : Si</ng-template>
+            <ng-template #elseBlock_9>Presenta : No</ng-template>
+
+            
+            <h4>Candidiasis Genital </h4>
+            <div *ngIf="genital_thrush ; then thenBlock_10 else elseBlock_10"></div>
+            <ng-template #thenBlock_10>Presenta : Si</ng-template>
+            <ng-template #elseBlock_10>Presenta : No</ng-template>
+            
+            <h4>Comezón</h4>
+            <div *ngIf="itchinf ; then thenBlock_11 else elseBlock_11"></div>
+            <ng-template #thenBlock_11>Presenta : Si</ng-template>
+            <ng-template #elseBlock_11>Presenta : No</ng-template>
+
+            
+            <h4>curación retrasada</h4>
+            <div *ngIf="delayed_healing ; then thenBlock_12 else elseBlock_12"></div>
+            <ng-template #thenBlock_12>Presenta : Si</ng-template>
+            <ng-template #elseBlock_12>Presenta : No</ng-template>
+
+            
+            <h4>Rigidez Muscular </h4>
+            <div *ngIf="muscle_stiffness ; then thenBlock_13 else elseBlock_13"></div>
+            <ng-template #thenBlock_13>Presenta : Si</ng-template>
+            <ng-template #elseBlock_13>Presenta : No</ng-template>
+
+            
+            <h4>Obesidad </h4>
+            <div *ngIf="Obesity ; then thenBlock_14 else elseBlock_14"></div>
+            <ng-template #thenBlock_14>Presenta : Si</ng-template>
+            <ng-template #elseBlock_14>Presenta : No</ng-template>
+
           </div>
   
           <div class="col-third">

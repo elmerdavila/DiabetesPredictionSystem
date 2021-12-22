@@ -40,9 +40,25 @@ export class ExamViewComponent implements OnInit {
   });
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  doctor_email:string = 'Administrador'
-  paciente:Patient
-  examen:Exam
+  doctor_email:string = 'Administrador';
+  paciente:Patient;
+  examen:Exam;
+
+  polyura:Boolean=false ;
+  weigtht_loss:Boolean=false ;
+  polyfagia:Boolean=false ;
+  visual_blurring:Boolean=false ;
+  irritabilty:Boolean=false ;
+  partial_paresis:Boolean=false ;
+  Alopecia:Boolean=false ;
+  polydipsia:Boolean=false ;
+  weakness:Boolean=false ;
+  genital_thrush:Boolean=false ;
+  itchinf:Boolean=false ;
+  delayed_healing:Boolean=false ;
+  muscle_stiffness:Boolean=false ;
+  Obesity :Boolean=false ;
+
   constructor(private fb:FormBuilder,private router:Router,
     private activateRoute:ActivatedRoute,
     private examService:ExamService,
@@ -59,15 +75,29 @@ export class ExamViewComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    /*this.activateRoute.params
-    .subscribe((params: Patient) =>{
-       this.paciente = params
-       console.log("Estos son los parametros del paciente",params)
-      });*/
     this.activateRoute.params
     .subscribe((params: Exam) =>{
-       this.examen = params
-       console.log("Estos son los parametros del examen",params)
+      this.examen = params
+      if (this.examen.polyura == 1 ){ this.polyura=true }
+      if (this.examen.weigtht_loss== 1 ){ this.weigtht_loss=true }
+      if (this.examen.polyfagia== 1 ){ this.polyfagia=true }
+
+      if (this.examen.visual_blurring == 1 ){ this.visual_blurring=true }
+      if (this.examen.irritabilty== 1 ){ this.irritabilty=true }
+      if (this.examen.partial_paresis== 1 ){ this.partial_paresis=true }
+
+      if (this.examen.Alopecia== 1 ){ this.Alopecia=true }
+      if (this.examen.polydipsia== 1 ){ this.polydipsia=true }
+      if (this.examen.weakness== 1 ){ this.weakness=true }
+
+      if (this.examen.genital_thrush == 1 ){ this.genital_thrush=true }
+      if (this.examen.itchinf== 1 ){ this.itchinf=true }
+      if (this.examen.delayed_healing== 1 ){ this.delayed_healing=true }
+
+      if (this.examen.muscle_stiffness == 1 ){ this.muscle_stiffness =true }
+      if (this.examen.Obesity== 1 ){ this.Obesity=true }
+
+      console.log("Estos son los parametros del examen",params)
       });
   }
 

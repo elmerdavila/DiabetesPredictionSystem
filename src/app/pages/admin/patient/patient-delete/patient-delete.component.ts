@@ -1,8 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 //import { ToastrService } from 'ngx-toastr';
 import { Patient } from 'src/app/models/Patient.interface';
+import { AuthService } from 'src/app/service/auth.service';
 import { PatientService } from 'src/app/service/patient.service';
 
 @Component({
@@ -11,10 +13,9 @@ import { PatientService } from 'src/app/service/patient.service';
   styleUrls: ['./patient-delete.component.css']
 })
 export class PatientDeleteComponent implements OnInit {
-
   constructor(private modalService: NgbModal, public dialogRef: MatDialogRef<PatientDeleteComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,private patientService:PatientService/*, private toastr:ToastrService*/) { 
-    
+    @Inject(MAT_DIALOG_DATA) public data: any,private patientService:PatientService,public authservice:AuthService,private router:Router /*, private toastr:ToastrService*/) { 
+
   }
 
   
@@ -33,8 +34,7 @@ export class PatientDeleteComponent implements OnInit {
 }
 
   btnEliminarPaciente(){
-    console.log(this.data.id);
-    this.patientService.deletePatient(this.data.data.id);
+    this.patientService.deletePatient2(this.data.doctor, this.data.data.id);
     this.dialogRef.close();
     
     
