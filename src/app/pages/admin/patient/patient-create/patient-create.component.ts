@@ -31,6 +31,7 @@ export class PatientCreateComponent implements OnInit {
       this.authservice.devolverUsuario()
       .then(data =>{
         if (data != null ){
+          //console.log(data)
           this.email = data.email;
         }else{
           this.router.navigate(['/iniciarSesion'])
