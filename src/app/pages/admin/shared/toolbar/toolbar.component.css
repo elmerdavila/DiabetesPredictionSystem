@@ -2,6 +2,7 @@ mat-toolbar {
     background: white;
     text-align: left;
     color: rgb(0, 0, 0);
+    height: 10%;
 }
 
 .example-spacer {

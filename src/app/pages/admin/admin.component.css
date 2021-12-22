@@ -5,16 +5,17 @@ mat-sidenav{
     border-right: none;
     background: rgb(9,31,74) ;
     color: white;
-    /*border-radius: 10px;*/
+    height: 100vh;
     padding: 18px;
     text-align: center;
 }
 mat-sidenav-content{
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 .content{
-    height: 90vh;
+    height: 100%;
     width: 80vw;
     margin: 7px;
     margin-left: 15px;
@@ -27,7 +28,7 @@ mat-sidenav-content{
     background-color: white;
 }
 mat-sidenav-container{
-    height: 100vh;
+   
     background-color: rgba(195, 195, 195, 0.897);
 }
 
