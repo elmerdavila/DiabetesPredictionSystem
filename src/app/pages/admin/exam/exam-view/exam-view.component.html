@@ -1,1 +1,56 @@
-<h1>Aqui se mostrara lo de ver examen</h1>
+<form class="formulario">
+    <div class="titulo" >
+        <span>Examen de {{examen.date}}</span>
+    </div>
+    <div class="contenido-informacion">
+        <div class="row">
+          <div class="col-third">
+            <h4>Polyura</h4>
+            <div >presenta: {{examen.polyura}}</div>
+            <h4>Perdida de Peso {{examen.weigtht_loss}}</h4>
+            <div >presenta: {{examen.weigtht_loss}}</div>
+            <h4>Polifagia {{examen.polyfagia}}</h4>
+            <div >presenta: {{examen.polyfagia}}</div>
+            <h4>Desenfoque Visual {{examen.visual_blurring}}</h4>
+            <div >presenta: {{examen.visual_blurring}}</div>
+            <h4>Irritabilidad</h4>
+            <div >presenta: {{examen.irritabilty}}</div>
+            <h4>Paresia Parcial</h4>
+            <div >presenta: {{examen.partial_paresis}}</div>
+            <h4>Alopecia {{examen.Alopecia}}</h4>
+            <div >presenta: {{examen.Alopecia}}</div>
+          </div>
+          <div class="col-third">
+            <h4>Polydipsia {{examen.polydipsia}}</h4>
+            <div >presenta: {{examen.polydipsia}}</div>
+            <h4>Sensacion de Debilidad {{examen.weakness}}</h4>
+            <div >presenta: {{examen.weakness}}</div>
+            <h4>Candidiasis Genital {{examen.genital_thrush}}</h4>
+            <div >presenta: {{examen.genital_thrush}}</div>
+            <h4>Comezón {{examen.itchinf}}</h4>
+            <div >presenta: {{examen.itchinf}}</div>
+            <h4>curación retrasada {{examen.delayed_healing}}</h4>
+            <div >presenta: {{examen.delayed_healing}}</div>
+            <h4>Rigidez Muscular {{examen.muscle_stiffness}}</h4>
+            <div >presenta: {{examen.muscle_stiffness}}</div>
+            <h4>Obesidad {{examen.Obesity}}</h4>
+            <div >presenta: {{examen.Obesity}}</div>
+          </div>
+  
+          <div class="col-third">
+            <h2>Datos Adicionales</h2>
+            <h4>Resultados</h4>
+              <input type="text" readonly value="{{examen.results}}" formControlName="results" placeholder="Respuesta"/>
+           
+            <h4>Comentarios</h4>
+              <textarea formControlName="coments" readonly value="{{examen.coments}}">{{examen.results}}</textarea>
+            <h4>Fecha de Examen</h4>
+              <input type="date" formControlName="date" readonly placeholder="Fecha de Inicio" value="{{examen.date}}"/>
+          
+          </div>
+        
+        </div>
+  
+    </div>
+  </form>
+  

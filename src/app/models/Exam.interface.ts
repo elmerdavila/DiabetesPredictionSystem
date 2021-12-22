@@ -17,5 +17,7 @@ export interface Exam{
     results:string,
     coments:string,
     notification:string,
-    date:string
+    date:string,
+    age:number,
+    gender:number,
 }

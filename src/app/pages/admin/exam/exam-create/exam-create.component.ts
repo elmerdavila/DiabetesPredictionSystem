@@ -5,6 +5,7 @@ import { ExamService } from 'src/app/service/exam.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { Patient } from 'src/app/models/Patient.interface';
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 @Component({
   selector: 'app-exam-create',
@@ -14,24 +15,26 @@ import { Patient } from 'src/app/models/Patient.interface';
 export class ExamCreateComponent implements OnInit {
 
   public formularioExamen:FormGroup=this.fb.group({
-    polyura: new FormControl('false'),
-    polydipsia: new FormControl('false'),
-    weigtht_loss: new FormControl('false'),
-    weakness:new FormControl('false'),
-    polyfagia: new FormControl('false'),
-    genital_thrush: new FormControl('false'),
-    visual_blurring: new FormControl('false'),
-    itchinf: new FormControl('false'),
-    irritabilty: new FormControl('false'),
-    delayed_healing: new FormControl('false'),
-    partial_paresis: new FormControl('false'),
-    muscle_stiffness: new FormControl('false'),
-    Alopecia:new FormControl('false'),
-    Obesity: new FormControl('false'),
+    polyura: new FormControl(0),
+    polydipsia: new FormControl(0),
+    weigtht_loss: new FormControl(0),
+    weakness:new FormControl(0),
+    polyfagia: new FormControl(0),
+    genital_thrush: new FormControl(0),
+    visual_blurring: new FormControl(0),
+    itchinf: new FormControl(0),
+    irritabilty: new FormControl(0),
+    delayed_healing: new FormControl(0),
+    partial_paresis: new FormControl(0),
+    muscle_stiffness: new FormControl(0),
+    Alopecia:new FormControl(0),
+    Obesity: new FormControl(0),
     results: new FormControl(''),
     coments: new FormControl(''),
     notification:new FormControl('Sin Notificacion'),
     date: new FormControl(''),
+    age: new FormControl(0),
+    gender: new FormControl(0)
   });
 
   public email="";
@@ -56,7 +59,9 @@ export class ExamCreateComponent implements OnInit {
     this.activateRoute.params
     .subscribe((params: Patient) =>{
        this.paciente = params
-       console.log("Estos son los parametros del paciente",params)
+       this.formularioExamen.get('age').setValue(Number(this.paciente.edad));
+       let genero=this.paciente.genero=='Masculino'?1:0;
+       this.formularioExamen.get('gender').setValue(genero);
       });
 
   }
@@ -66,8 +71,9 @@ export class ExamCreateComponent implements OnInit {
     this.router.navigate(['/administracion/listaExamenes',this.paciente])
   }
   public generarResultados(){
+    console.log("Esto son los valores enviados",this.formularioExamen.value);
     this.examService.generarResultados(this.formularioExamen.value).subscribe(data=>{
-      this.formularioExamen.get('results').setValue(data.resultado);
+      this.formularioExamen.get('results').setValue(data.prediccion);
     });
     
   }
